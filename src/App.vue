@@ -5,6 +5,8 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <router-view name="email"/>
+    <router-view name="tel"/>
   </div>
 </template>
 
