@@ -1,6 +1,6 @@
 import Home from '@/views/Home.vue'
 import Layout from '@/views/layout.vue'
-export const routerMap = [
+export default [
   {
     path: '/home',
     name: 'home',
@@ -18,6 +18,26 @@ export const routerMap = [
         component: Home
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    meta: {
+      title: '登录'
+    },
+    component: () => import('@/views/login.vue')
+  },
+  {
+    path: '/icon_page',
+    name: 'icon_page',
+    meta: {
+      title: '图标'
+    },
+    component: () => import('@/views/icon_page.vue')
+  },
+  {
+    path: '*',
+    component: () => import('@/views/error_404.vue')
   },
   {
     path: '/about',
@@ -169,28 +189,5 @@ export const routerMap = [
       title: 'sotre'
     },
     component: () => import('@/views/store.vue')
-  }
-]
-
-export const routes = [
-  {
-    path: '/login',
-    name: 'login',
-    meta: {
-      title: '登录'
-    },
-    component: () => import('@/views/login.vue')
-  },
-  {
-    path: '/icon_page',
-    name: 'icon_page',
-    meta: {
-      title: '图标'
-    },
-    component: () => import('@/views/icon_page.vue')
-  },
-  {
-    path: '*',
-    component: () => import('@/views/error_404.vue')
   }
 ]
